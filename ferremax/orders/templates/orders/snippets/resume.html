@@ -1,0 +1,38 @@
+{% load product_extras %}
+{% load static %}
+<div class="card">
+    <div class="card_body">
+        Resumen de pedido
+    </div>
+    <div class="tabla">
+        <div class="nes-table-responsive">
+            <table class="nes-table is-bordered is-centered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Productos:</td>
+                        <td>{{ cart.total | price_format }}</td>
+                    </tr>
+                    <tr>
+                        <td>Envio:</td>
+                        <td>{{ order.shipping_total | price_format }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="no_c3">
+            <hr>
+            <div class="otroxd">
+                Total (Impuestos incluidos)
+                <div class="total">
+                    {{ order.total | price_format }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
